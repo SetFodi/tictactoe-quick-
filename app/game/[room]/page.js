@@ -1,7 +1,7 @@
 import Board from "../../../components/Board";
 
 export default async function GameRoom({ params, searchParams }) {
-  const { room } = params; // Dynamic room ID
+  const { room } = await params; // Await params to resolve the Promise
   const { mode } = await searchParams; // Await searchParams
 
   if (mode !== "multi") return <p className="text-white">Invalid mode for room</p>;
